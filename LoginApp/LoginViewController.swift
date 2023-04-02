@@ -8,13 +8,13 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-    // MARK: - Private properties
-    private let userName = "User"
-    private let password = "Password"
-    
     // MARK: - IB Outlets
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
+    
+    // MARK: - Private properties
+    private let userName = "User"
+    private let password = "Password"
     
     // MARK: - UI View life cycle
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -29,21 +29,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - IB Action functions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        guard let inputName = userNameTF.text, !inputName.isEmpty else {
-            getAlert(
-                withTitle: "Invalid login or password!",
-                andMessage: "Please, enter correct login and password"
-            )
-            return
-        }
-        guard let inputPassword = passwordTF.text, !inputPassword.isEmpty else {
-            getAlert(
-                withTitle: "Invalid login or password!",
-                andMessage: "Please, enter correct login and password"
-            )
-            return
-        }
-        if inputName != userName || inputPassword != password {
+        if userNameTF.text != userName || passwordTF.text != password {
             getAlert(
                 withTitle: "Invalid login or password!",
                 andMessage: "Please, enter correct login and password"

@@ -8,9 +8,10 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-    var welcomeValue: String!
 
     @IBOutlet var welcomeLabel: UILabel!
+    
+    var welcomeValue: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
