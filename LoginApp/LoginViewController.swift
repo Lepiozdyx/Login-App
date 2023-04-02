@@ -33,7 +33,9 @@ final class LoginViewController: UIViewController {
             getAlert(
                 withTitle: "Invalid login or password!",
                 andMessage: "Please, enter correct login and password"
-            )
+            ) { _ in
+                    self.passwordTF.text = ""
+                }
             return
         }
     }
@@ -43,7 +45,9 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func recallPasswordButtonTapped(_ sender: UIButton) {
-        getAlert(withTitle: "Attention!", andMessage: "Your password is \(password) 🙉")
+        getAlert(withTitle: "Attention!", andMessage: "Your password is \(password) 🙉") { _ in
+            self.passwordTF.text = ""
+        }
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -52,11 +56,13 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func getAlert(withTitle title: String, andMessage message: String) {
+    private func getAlert(
+        withTitle title: String,
+        andMessage message: String,
+        handler: ((UIAlertAction) -> Void)? = nil
+    ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTF.text = ""
-        }
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
         alert.addAction(okAction)
         present(alert, animated: true)
     }
