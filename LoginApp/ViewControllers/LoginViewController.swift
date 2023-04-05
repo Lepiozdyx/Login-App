@@ -9,27 +9,44 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     // MARK: - IB Outlets
+    @IBOutlet var backgroundView: UIImageView!
+    
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    // MARK: - Private properties
-    private let userName = "Alexey"
-    private let password = "Pass"
+    // MARK: - Public properties
+    let aboutUser = User.getUser()
     
     // MARK: - UI View life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        backgroundView.setBackgroundImage("backgroundImage")
+        userNameTF.text = aboutUser.userName
+        passwordTF.text = aboutUser.password
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeValue = userName
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.welcomeValue = aboutUser
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let personVC = navigationVC.topViewController as? PersonViewController else { return }
+                personVC.personValue = aboutUser
+            }
+        }
     }
     
     // MARK: - IB Action functions
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if userNameTF.text != userName || passwordTF.text != password {
+    @IBAction func loginButtonTapped() {
+        if userNameTF.text != aboutUser.userName || passwordTF.text != aboutUser.password {
             getAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -42,8 +59,8 @@ final class LoginViewController: UIViewController {
   
     @IBAction func recallUserData(_ sender: UIButton) {
         sender.tag == 0
-            ? getAlert(title: "Suddenly!", message: "Your name is \(userName) 😎")
-            : getAlert(title: "Attention!", message: "Your password is \(password) 🫣")
+        ? getAlert(title: "Suddenly!", message: "Your name is \(aboutUser.userName) 😎")
+        : getAlert(title: "Attention!", message: "Your password is \(aboutUser.password) 🫣")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
