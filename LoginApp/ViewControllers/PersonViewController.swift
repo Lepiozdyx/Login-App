@@ -14,7 +14,6 @@ final class PersonViewController: UIViewController {
     
     @IBOutlet var aboutLabels: [UILabel]!
     
-    
     var personValue: User!
 
     override func viewDidLoad() {

@@ -14,7 +14,6 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var greetingsLabel: UILabel!
     
-    
     var welcomeValue: User!
     
     override func viewDidLoad() {

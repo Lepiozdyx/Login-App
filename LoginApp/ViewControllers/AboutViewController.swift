@@ -13,7 +13,6 @@ final class AboutViewController: UIViewController {
     
     @IBOutlet var textAboutMe: UITextView!
     
-    
     var bioValue: User!
     
     override func viewDidLoad() {
