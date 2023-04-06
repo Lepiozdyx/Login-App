@@ -17,7 +17,7 @@
 		FA0652B229D71F5700DFBD7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0652B129D71F5700DFBD7F /* Assets.xcassets */; };
 		FA0652B529D71F5700DFBD7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0652B329D71F5700DFBD7F /* LaunchScreen.storyboard */; };
 		FA0652BD29D7224600DFBD7F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0652BC29D7224600DFBD7F /* WelcomeViewController.swift */; };
-		FA415DA929DDCB38003A3F9D /* SetImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415DA829DDCB38003A3F9D /* SetImages.swift */; };
+		FA415DA929DDCB38003A3F9D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415DA829DDCB38003A3F9D /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		FA0652B429D71F5700DFBD7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0652B629D71F5700DFBD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0652BC29D7224600DFBD7F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		FA415DA829DDCB38003A3F9D /* SetImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImages.swift; sourceTree = "<group>"; };
+		FA415DA829DDCB38003A3F9D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 		FA415DA529DDCAD3003A3F9D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FA415DA829DDCB38003A3F9D /* SetImages.swift */,
+				FA415DA829DDCB38003A3F9D /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			files = (
 				FA0652AD29D71F5600DFBD7F /* LoginViewController.swift in Sources */,
 				FA00083229DCB8B000CBA244 /* PersonViewController.swift in Sources */,
-				FA415DA929DDCB38003A3F9D /* SetImages.swift in Sources */,
+				FA415DA929DDCB38003A3F9D /* UIImageView.swift in Sources */,
 				FA0652BD29D7224600DFBD7F /* WelcomeViewController.swift in Sources */,
 				FA00083429DCF6E300CBA244 /* AboutViewController.swift in Sources */,
 				FA0652A929D71F5600DFBD7F /* AppDelegate.swift in Sources */,

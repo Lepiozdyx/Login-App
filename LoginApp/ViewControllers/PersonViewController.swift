@@ -21,11 +21,19 @@ final class PersonViewController: UIViewController {
         backgroundView.setBackgroundImage("backgroundImage")
         photoView.configurePhoto(with: personValue.person.photo)
         
-        aboutLabels[0].text = personValue.person.firstName
-        aboutLabels[1].text = personValue.person.lastName
-        aboutLabels[2].text = personValue.person.age
-        aboutLabels[3].text = personValue.person.maritalStatus
-        aboutLabels[4].text = personValue.person.hobbies
+        let personProperties: [String: String] = [
+            "name": personValue.person.firstName,
+            "surname": personValue.person.lastName,
+            "age": personValue.person.age,
+            "status": personValue.person.maritalStatus,
+            "hobbies": personValue.person.hobbies
+        ]
+        
+        var index = 0
+        personProperties.values.forEach { value in
+            aboutLabels[index].text = value
+            index += 1
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
