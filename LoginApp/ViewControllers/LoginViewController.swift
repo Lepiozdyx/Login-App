@@ -15,12 +15,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     
     // MARK: - Public properties
-    var user: User!
+    private let user = User.getUser()
     
     // MARK: - UI View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = User.getUser()
         backgroundView.setBackgroundImage("backgroundImage")
         userNameTF.text = user.userName
         passwordTF.text = user.password
@@ -32,14 +31,18 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let tabBarController = segue.destination as? UITabBarController else {
+            return
+        }
         guard let viewControllers = tabBarController.viewControllers else { return }
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.welcomeValue = user
             } else if let navigationVC = viewController as? UINavigationController {
-                guard let personVC = navigationVC.topViewController as? PersonViewController else { return }
+                guard let personVC = navigationVC.topViewController as? PersonViewController else {
+                    return
+                }
                 personVC.personValue = user
             }
         }

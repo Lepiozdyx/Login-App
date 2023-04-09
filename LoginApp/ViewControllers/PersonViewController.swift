@@ -22,11 +22,10 @@ final class PersonViewController: UIViewController {
         photoView.configurePhoto(with: personValue.person.photo)
         
         let personProperties: [String: String] = [
-            "name": personValue.person.firstName,
-            "surname": personValue.person.lastName,
+            "name": personValue.person.fullName,
             "age": personValue.person.age,
             "status": personValue.person.maritalStatus,
-            "hobbies": personValue.person.hobbies
+            "hobby": personValue.person.hobbies
         ]
         
         var index = 0

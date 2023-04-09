@@ -20,7 +20,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         backgroundView.setBackgroundImage("backgroundImage")
         welcomeLabel.text = "Hello, \(welcomeValue.userName)!"
-        greetingsLabel.text = "\(welcomeValue.person.firstName) glad to see you!"
+        greetingsLabel.text = "My name is \(welcomeValue.person.fullName)!"
     }
     
 }
