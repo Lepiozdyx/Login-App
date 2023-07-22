@@ -31,12 +31,14 @@ struct Person {
     static func getPerson() -> Person {
         Person(
             photo: "photo",
-            firstName: "Alex",
-            lastName: "July",
-            age: "33",
-            hobbies: "Computer technologies",
+            firstName: "John",
+            lastName: "Wick",
+            age: "46",
+            hobbies: "Muscle cars",
             maritalStatus: "Married",
-            biography: "Some text Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text  Some text "
+            biography: """
+I was born into a Roma family in the settlement of Podgorie, somewhere in the Belarusian SSR (now the Republic of Belarus). At birth he was named Jardani Jovonovich. Orphaned at a young age, he was then adopted by an old friend of my father's who eventually became my mentor. Spent much of his youth in the Mexican town of El Sauzal. Served in the Marine Corps, in which service he earned the name "John Wick." At one point was recruited by Rusca Roma, a New York organized crime group whose leader, a woman known by the alias "The Director", trained me in combat skills. Under the Director's supervision, I was trained as a hitman and learned martial arts skills, tactical driving, escapology, and the use of firearms and other weapons. After leaving the Ruska Roma organization, I was arrested for an unspecified crime and imprisoned. Upon release, I was forced to join an underground criminal underworld operating out of the Continental Hotel chain. Eventually became a member of the Payday syndicate in New York City, gaining a status in the criminal world as a formidable and ruthless hitman known for his determination, commitment and strong-willed qualities. While working in the Russian Crime Syndicate, I earned the nickname "Baba Yaga".
+"""
         )
     }
 }
