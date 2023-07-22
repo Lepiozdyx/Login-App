@@ -12,7 +12,10 @@ final class PersonViewController: UIViewController {
     @IBOutlet var backgroundView: UIImageView!
     @IBOutlet var photoView: UIImageView!
     
-    @IBOutlet var aboutLabels: [UILabel]!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var hobbyLabel: UILabel!
     
     var personValue: User!
 
@@ -21,18 +24,10 @@ final class PersonViewController: UIViewController {
         backgroundView.setBackgroundImage("backgroundImage")
         photoView.configurePhoto(with: personValue.person.photo)
         
-        let personProperties: [String: String] = [
-            "name": personValue.person.fullName,
-            "age": personValue.person.age,
-            "status": personValue.person.maritalStatus,
-            "hobby": personValue.person.hobbies
-        ]
-        
-        var index = 0
-        personProperties.values.forEach { value in
-            aboutLabels[index].text = value
-            index += 1
-        }
+        nameLabel.text = "Name: \(personValue.person.fullName)"
+        ageLabel.text = "Age: \(personValue.person.age)"
+        statusLabel.text = "Marital status: \(personValue.person.maritalStatus)"
+        hobbyLabel.text = "Hobby: \(personValue.person.hobbies)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
